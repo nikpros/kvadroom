@@ -1,0 +1,89 @@
+.banner
+    display: flex
+    flex-wrap: wrap
+    marginLeftRight(-15px)
+    &-descr, &-slider
+        paddigLeftRight(15px)
+    @media screen and (min-width: 768px)
+        &-descr, &-slider
+            flexRow(50%)
+        .nav-menu
+            justify-content: flex-start
+    @media screen and (min-width: 992px)
+        .nav-menu
+            justify-content: flex-end
+    @media screen and (min-width: 1200px)
+        &-descr
+            flexRow(60%)
+        &-slider
+            flexRow(40%)
+        .nav-logo, .nav-menu
+            flexRow(auto)
+    @media screen and (max-width: 767px)
+        &-descr, .nav-logo, .nav-menu
+            flexRow()
+        &-slider
+            flexRow()
+            padding: 0
+        .nav-menu
+            justify-content: center
+    &-descr
+        display: flex
+        flex-wrap: wrap
+        align-content: space-around
+        .nav
+            flexRow()
+            .nav-logo
+                display flex
+                position relative
+                align-items: center
+                &-brand
+                    display: inline-block
+                    line-height: inherit 
+                    white-space: nowrap
+            .nav-menu
+                display flex
+                flex-basis: auto
+                flex-grow: 1
+                align-items: center
+                &-items
+                    list-style: none
+                    padding: 0
+                    margin 0
+                    li
+                        display: inline-block
+                        &:not(:last-child)
+                            p
+                                padding-right: 15px
+        .text
+            flexRow()
+        .footer
+            flexRow()
+
+
+
+
+
+    &-slider
+        position relative
+        &-view
+            img
+                object-fit: cover;
+                width: 100%
+                height: 100%
+            
+        &-prev
+            position: absolute
+            top: 50%
+            left: 20px
+            transform: translateY(-50%)
+        &-next
+            position: absolute
+            top: 50%
+            right: 20px
+            transform: translateY(-50%)
+
+
+
+
+
