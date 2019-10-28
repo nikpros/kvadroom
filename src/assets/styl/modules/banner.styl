@@ -1,23 +1,25 @@
 .banner
     display: flex
     flex-wrap: wrap
+    background-color: $default-color
     marginLeftRight(-15px)
-    &-descr, &-slider
-        paddigLeftRight(15px)
+    min-height: 400px
+    // width: 1080px
     @media screen and (min-width: 768px)
         &-descr, &-slider
             flexRow(50%)
         .nav-menu
+            margin: 30px 0
             justify-content: flex-start
-    @media screen and (min-width: 992px)
-        .nav-menu
-            justify-content: flex-end
     @media screen and (min-width: 1200px)
         &-descr
             flexRow(60%)
         &-slider
             flexRow(40%)
-        .nav-logo, .nav-menu
+        .nav-logo
+            flexRow(auto)
+        .nav-menu
+            justify-content: flex-end
             flexRow(auto)
     @media screen and (max-width: 767px)
         &-descr, .nav-logo, .nav-menu
@@ -25,12 +27,17 @@
         &-slider
             flexRow()
             padding: 0
+        .nav-logo
+            justify-content: center
         .nav-menu
+            margin: 10px 0
             justify-content: center
     &-descr
         display: flex
         flex-wrap: wrap
         align-content: space-around
+        padding: 15px 45px 15px 15px
+        // paddigLeftRight(15px)
         .nav
             flexRow()
             .nav-logo
@@ -52,38 +59,64 @@
                     margin 0
                     li
                         display: inline-block
+                        a
+                            text-decoration: none
+                            // color: $mainFontColor
                         &:not(:last-child)
-                            p
+                            a
                                 padding-right: 15px
         .text
+            min-height: 140px
             flexRow()
         .footer
             flexRow()
 
-
-
-
-
     &-slider
         position relative
         &-view
+            background-color: $neutral-placeholder
+            width: 100%
+            height: 100%
+            overflow hidden
             img
-                object-fit: cover;
+                // object-fit: cover;
                 width: 100%
                 height: 100%
+                // opacity: 1
             
         &-prev
             position: absolute
             top: 50%
             left: 20px
             transform: translateY(-50%)
+            cursor pointer
         &-next
             position: absolute
             top: 50%
             right: 20px
             transform: translateY(-50%)
+            cursor pointer
 
 
+.slideLeft-enter-active, .slideLeft-leave-active {
+    transition: all .5s;
+}
 
+.slideLeft-enter
+    opacity: 0
+    transform: translateX(10px)
+.slideLeft-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+    transform: translateX(-10px)
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+// .fade-enter-to, .fade-leave
+//     opacity: 1
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+    opacity: 0;
+}
 
 
