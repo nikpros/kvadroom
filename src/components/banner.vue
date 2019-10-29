@@ -21,7 +21,7 @@
                     p(v-else-if="currentSlide==1" key=1) {{ descrSlide[1] }}
                     p(v-else="currentSlide==2" key=2) {{ descrSlide[2] }}
             .footer
-                p жк &#8226; balance м. рязанский проспект
+                a(href="" @click.prevent="") жк &#8226; balance м. рязанский проспект
         .banner-slider
             .banner-slider-view
                 transition(name="fade" mode="out-in")
