@@ -1,14 +1,16 @@
-# SPA template
+Рекламный баннер на Vue
 
-## Usage
-This is a template for Single Page Application
+## Инструкция по установке
+Важно!!! Разработка баннера велась на ОС Windows 10 и отладка в Google Chrome v77.0.3865.120
 ```
-$ cd webpack-spa
+$ cd kvadroom-master
 $ npm install
 $ npm run dev
 ```
-## What's included
+## Использовалось
 + PUG
 + Stylus
-+ Bootstrap
++ Bootstrap (только в целях .container)
 + jQuery
++ VueJS
++ Flexbox
