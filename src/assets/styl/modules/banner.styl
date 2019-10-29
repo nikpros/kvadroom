@@ -30,15 +30,15 @@
                 list-style: none
                 padding: 0
                 margin 0
-                li
+                .menu-item
                     display: inline-block
                     a
                         text-decoration: none
-                        // color: $mainFontColor
+                        color: $mainFontColor
                     &:not(:last-child)
                         a
                             padding-right: 15px
-
+                        
     &-descr
         display: flex
         flex-wrap: wrap
@@ -104,7 +104,9 @@
             width: 60%
             height: 25%
             margin: 0
+            paddingLeftRight(25px)
             .nav-logo
+                margin-top: 15px
                 justify-content: flex-start
             .nav-menu
                 justify-content: flex-start
@@ -114,6 +116,7 @@
             width: 60%
             height: 75%
             margin: 0
+            paddingLeftRight(25px)
         &-slider
             order: 3
             width: 40%
@@ -127,12 +130,16 @@
                 
     @media screen and (min-width: 1200px)
         &-nav
+            paddingLeftRight(45px)
             .nav-logo
                 flexRow(auto)
+                margin-top: 0
             .nav-menu
                 flex-basis: auto
                 flex-grow: 1
                 justify-content: flex-end
+        &-descr
+            paddingLeftRight(45px)
 
 
 

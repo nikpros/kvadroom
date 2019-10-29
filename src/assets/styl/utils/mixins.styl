@@ -16,6 +16,9 @@ marginLeftRight($margin)
   margin-left: $margin
   margin-right: $margin
 
-flexRow($widht = 100%)
-  flex: 0 0 $widht
-  max-width $widht
+flexRow($width = 100%)
+  flex: 0 0 $width
+  if $width == 'auto'
+    max-width 100%
+  else
+    max-width $width
