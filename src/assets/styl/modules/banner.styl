@@ -1,83 +1,82 @@
 .banner
-    display: flex
+    display: inline-flex
     flex-wrap: wrap
     background-color: $default-color
-    marginLeftRight(-15px)
-    min-height: 400px
+    // width: 70vw
+    // height: 90vh
+    flex-direction: column
+    // marginLeftRight(15px)
     // width: 1080px
-    @media screen and (min-width: 768px)
-        &-descr, &-slider
-            flexRow(50%)
-        .nav-menu
-            margin: 30px 0
-            justify-content: flex-start
-    @media screen and (min-width: 1200px)
-        &-descr
-            flexRow(60%)
-        &-slider
-            flexRow(40%)
+    width: 100%
+    height: auto
+    &-nav
+        display: flex
+        flex-wrap: wrap
+        order: 1
+        margin-top: 10px
+        paddingLeftRight(15px)
         .nav-logo
-            flexRow(auto)
-        .nav-menu
-            justify-content: flex-end
-            flexRow(auto)
-    @media screen and (max-width: 767px)
-        &-descr, .nav-logo, .nav-menu
             flexRow()
-        &-slider
-            flexRow()
-            padding: 0
-        .nav-logo
+            display: flex
             justify-content: center
+            align-items: center
         .nav-menu
-            margin: 10px 0
+            display flex
+            flexRow(100%)
+            align-items: center
             justify-content: center
+            margin-top: 10px
+            &-items
+                list-style: none
+                padding: 0
+                margin 0
+                li
+                    display: inline-block
+                    a
+                        text-decoration: none
+                        // color: $mainFontColor
+                    &:not(:last-child)
+                        a
+                            padding-right: 15px
+
     &-descr
         display: flex
         flex-wrap: wrap
-        align-content: space-around
-        padding: 15px 45px 15px 15px
-        // paddigLeftRight(15px)
-        .nav
-            flexRow()
-            .nav-logo
-                display flex
-                position relative
-                align-items: center
-                &-brand
-                    display: inline-block
-                    line-height: inherit 
-                    white-space: nowrap
-            .nav-menu
-                display flex
-                flex-basis: auto
-                flex-grow: 1
-                align-items: center
-                &-items
-                    list-style: none
-                    padding: 0
-                    margin 0
-                    li
-                        display: inline-block
-                        a
-                            text-decoration: none
-                            // color: $mainFontColor
-                        &:not(:last-child)
-                            a
-                                padding-right: 15px
+        justify-content: space-between
+        order: 3
+        margin: 10px 0
+        paddingLeftRight(15px)
         .text
-            min-height: 140px
+            margin-bottom: 20px
             flexRow()
+            display: flex
+            align-items: center
         .footer
+            display: flex
+            align-items: center
             flexRow()
 
     &-slider
         position relative
+        order: 2
+        margin-top: 10px
+        .button-buy
+            position: absolute
+            background-color: #FC4929
+            bottom: 5%
+            right: 50%
+            transform: translateX(50%)
+            color: $default-color
+            border-radius: 33px
+            padding: 10px
+            font-weight: 500
+            text-decoration: none
         &-view
             background-color: $neutral-placeholder
             width: 100%
             height: 100%
             overflow hidden
+            position: relative
             img
                 // object-fit: cover;
                 width: 100%
@@ -96,6 +95,43 @@
             right: 20px
             transform: translateY(-50%)
             cursor pointer
+    @media screen and (min-width: 768px)
+        height: 40vh
+        &-nav
+            width: 60%
+            height: 25%
+            margin: 0
+            .nav-logo
+                justify-content: flex-start
+            .nav-menu
+                justify-content: flex-start
+                margin: 0
+        &-descr
+            order: 2
+            width: 60%
+            height: 75%
+            margin: 0
+        &-slider
+            order: 3
+            width: 40%
+            height: 100%
+            margin: 0
+            .button-buy
+                right: 5%
+                transform: none
+            &-view img
+                width: auto
+                
+    @media screen and (min-width: 1200px)
+        &-nav
+            .nav-logo
+                flexRow(auto)
+            .nav-menu
+                flex-basis: auto
+                flex-grow: 1
+                justify-content: flex-end
+
+
 
 
 .slideLeft-enter-active, .slideLeft-leave-active {
